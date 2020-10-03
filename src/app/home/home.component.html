@@ -12,16 +12,75 @@
 
     <div class="home-section__buttons">
 
-        <a class="btn btn-primary" href="#" target="_blank">
+        <button class="btn btn-primary" (click)="activeSidebar('posts')">
             Mis posts
-        </a>
+        </button>
         
-        <a class="btn btn-primary" href="#" target="_blank">
+        <button class="btn btn-primary" (click)="activeSidebar('code')">
             Mi código
-        </a>
+        </button>
         
-        <a class="btn btn-primary" href="#" target="_blank">
-           Para mentoria
-        </a>
+        <button class="btn btn-primary" (click)="activeSidebar('mentor')">
+           Para mentoría 
+        </button>
+    </div>
+
+
+    <div class="sidebar" [ngClass]="{'active-sidebar': showSidebar}">
+        <div class="close" (click)="closeSidebar()">X</div>
+        <ng-container *ngIf="sidebarContent.posts">
+
+            <h2 class="sidebar__title">
+                Mis Posts
+    
+            </h2>
+    
+            <p>Escribo en <a class="link" target="_blank"  href="https://dev.to/henrygbc">Dev.to</a> donde puedes encontrar mis posts sobre desarrollo </p>
+            
+            <ul>
+                <li>Javascript</li>
+                <li>Typescript</li>
+                <li>Angular</li>
+                <li>Web Components</li>
+            </ul>
+            <p>Y mucho mas contenido sobre programación, en especial frontend <3 </p>
+
+            <a class="btn btn-primary btn-cta" target="_blank" href="https://dev.to/henrygbc">
+                Ir a dev.to
+            </a>
+        </ng-container>
+        <ng-container *ngIf="sidebarContent.code">
+
+            <h2 class="sidebar__title">
+                Mi Código 
+    
+            </h2>
+    
+            <p>Todos mis repos públicos en <a class="link" target="_blank"  href="https://github.com/HenryGBC">Github</a> </p>
+            
+      
+            <a class="btn btn-primary btn-cta" target="_blank" href="https://github.com/HenryGBC">
+                Ir a github
+            </a>
+        </ng-container>
+        <ng-container *ngIf="sidebarContent.mentor">
+
+            <h2 class="sidebar__title">
+                Mentoría 
+    
+            </h2>
+    
+            <p>Tengo mas de 8 años  de experiencia en el mundo del desarrollo, 
+                y en especial en el desarrollo web, inclinandome mas hacia el lado del frontend, esto combinado que me gusta ayudar a las personas a inciarse en este mundo
+                o a guiarlos en un camino en especial.
+            </p>
+            <p>Escribeme a henrygbcdev@gmail.com
+            </p>
+
+            <a class="btn btn-primary btn-cta" target="_blank" mailto="henrygbcdev@gmail.com">
+                Quiero mentoría 
+            </a>
+        </ng-container>
+
     </div>
 </section>

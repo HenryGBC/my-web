@@ -7,9 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  sidebarContent: any;
+  showSidebar: boolean;
+  constructor() { 
+
+    this.sidebarContent = {
+      posts: false,
+      code: false,
+      mentor: false,
+      who: false
+    }
+  }
 
   ngOnInit() {
   }
 
+  closeSidebar(){
+    this.showSidebar = false;
+  }
+
+  activeSidebar(value){
+    this.showSidebar = true;
+    this.sidebarContent = {
+      posts: false,
+      code: false,
+      mentor: false,
+      who: false
+    }
+    this.sidebarContent[value] = true;
+  }
 }

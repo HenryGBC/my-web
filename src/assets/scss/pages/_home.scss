@@ -42,24 +42,7 @@
         margin: 0 auto;
         left: 50%;
         transform: translate(-50%);
-        .btn{
-            color: #E19E29;
-            /* margin-top: 20px; */
-            border: 3px solid rgba(225, 158, 41, 0.6);
-            border-radius: 20em;
-            -webkit-box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.5);
-            box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.5);
-            font-size: 1.5rem;
-            padding: 1rem 3rem;
-            width: 200px;
-            text-align: center;
-            text-decoration: none;
-            transition: all .2s ease-in;
-            &:hover{
-                -webkit-box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.95);
-                box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.95);
-            }
-        }
+      
     }
     &__text{
         width: 100%;
@@ -78,7 +61,87 @@
     }
 
 }
+.btn{
+    color: #E19E29;
+    /* margin-top: 20px; */
+    border: 3px solid rgba(225, 158, 41, 0.6);
+    border-radius: 20em;
+    -webkit-box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.5);
+    box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.5);
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    &:hover{
+        -webkit-box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.95);
+        box-shadow: 0 0 24px 5px rgba(225, 158, 41, 0.95);
+    }
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: -90%;
+    background-color: #17162d;
+    padding: 2rem;
+    height: 100vh;
+    box-shadow: 0 0 24px 5px rgb(35 195 190);
+    z-index: 11;
+    width: 90%;
+    max-width: 474px;
+    box-sizing: border-box;
+    transition: all .5s cubic-bezier(.65,.3,0,1);
+    .link{
+        color: white;
+    }
+    &.active-sidebar{
+		right: 0;
+	}
+    .close{
+        position: absolute;
+        top: 15px;
+        left: 21px;
+        font-size: 1rem;
+        color: white;
+        cursor: pointer;
+    }
+    &__title{
+        color: white;
+        font-size: 3rem;
+    }
+    p{
+        color: #ffffff;
+        font-size: 1.4rem;
+    }
+    ul{
+        li{
+            color: white;
+            font-size: 2rem;
+        }
+    }
+    .btn-cta{
+        width: 172px;
+        display: block;
+        margin-top: 3rem;
+        cursor: pointer;
+    }
+}
 
+@keyframes sidebar-active{
+    from {right: -50%;}
+    to{right:0;}
+}
+@-moz-keyframes sidebar-active{
+    from {right: -50%;}
+    to{right:0;}
+}
+@-webkit-keyframes sidebar-active{
+    from {right: -50%;}
+    to{right:0;}
+}
 
 @media (max-width: 720px){
     .home-section{
