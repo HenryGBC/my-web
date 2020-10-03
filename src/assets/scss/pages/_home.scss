@@ -145,13 +145,17 @@
 
 @media (max-width: 720px){
     .home-section{
-  
+        &__container{
+            
+            align-items: self-start;
+        }
         &__buttons{
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         &__text{
+            padding-top: 4rem;
             h1{
                 font-size: 3rem;
                 line-height: 3rem;
